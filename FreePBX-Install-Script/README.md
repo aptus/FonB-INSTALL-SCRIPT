@@ -231,4 +231,4 @@ ___
 ### 6. License Activation
 Once you are done with everything, you will have to browse through the FonB License Inventory. For systems with no or expires license, navigating through `ip:port` will take you to the license inventory where you can simply enter the License Activation Key you have received on your email registered in Downloads section.
 
-For systems with valid license available, the License Inventory can be accessed by accessing `ip:port/license` in yoru web browser after replacing IP and Port for corresponding system. Thus, in our case, we could access our Licensing Inventory by navigating to `10.0.8.6:8080/license` URL.
+For systems with valid license available, the License Inventory can be accessed by accessing `ip:port/license` in yoru web browser after replacing IP and Port for corresponding system. Thus, in our case, we could access our Licensing Inventory by navigating to `10.0.8.6:8080/license` URL. Enter your new license activation keys and press Activate License button.
