@@ -1019,7 +1019,7 @@ class Mysql(object):
 
 class Uninstall(object):
 	"""
-	Deletes phoneb basedir, freepbx module and drops database
+	Deletes phoneb basedir and drops database
 	"""
 	def __init__(self):
 		self.error_happened = False
@@ -1062,15 +1062,6 @@ class Uninstall(object):
 			log("[ ERROR ]: Didn't drop database")
 			self.error_happened = True
 
-	def remove_freepbx(self):
-		if os.path.exists("/var/www/html/admin/modules/fonbadmin"):
-			log("Uninstalling Freepbx module...")
-			return_code = os.system("amportal a ma uninstall fonbadmin")
-			if return_code == 0:
-				os.system("amportal a ma reload")
-			else:
-				log("[ ERROR ]: Something didn't go well while removing freepbx FonB module.")
-				self.error_happened = True
 
 	def remove_init(self):
 		if os.access("/etc/init.d/phoneb", os.W_OK):
@@ -1097,7 +1088,6 @@ if __name__ == "__main__":
 	parser.add_option('-p', '--php', nargs=1, metavar='php-cgi', help="Validates php requirements for FonB. Expects php-cgi path as argument.")
 	parser.add_option('-c', '--prefix', nargs=1, metavar='/path/where/php/will/be/compiled', help="Downloads and compiles php with FonB specific requirements.")
 	parser.add_option('-v', '--version', action="store_true", help = "Show installation script version")
-	parser.add_option('-f', '--freepbx', action="store_true", help = "Install Freepbx module")
 	parser.add_option('-u', '--uninstall', action="store_true", help = "Uninstall FonB")
 	cmd_args, crap = parser.parse_args()
 
