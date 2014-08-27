@@ -1,4 +1,5 @@
-mport sys, urllib2, tarfile, zipfile, os, getpass, stat, StringIO, platform, shutil, glob, re, copy, operator
+#!/usr/bin/env python
+import sys, urllib2, tarfile, zipfile, os, getpass, stat, StringIO, platform, shutil, glob, re, copy, operator
 from optparse import OptionParser
 from distutils import spawn
 from ConfigParser import RawConfigParser
