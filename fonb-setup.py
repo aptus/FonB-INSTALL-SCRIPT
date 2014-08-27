@@ -1,5 +1,4 @@
-#!/usr/bin/env python
-import sys, urllib2, tarfile, zipfile, os, getpass, stat, StringIO, platform, shutil, glob, re, copy, operator
+mport sys, urllib2, tarfile, zipfile, os, getpass, stat, StringIO, platform, shutil, glob, re, copy, operator
 from optparse import OptionParser
 from distutils import spawn
 from ConfigParser import RawConfigParser
@@ -119,15 +118,6 @@ class Install(object):
 		log("Trying to start phoneb. By executing /etc/init.d/phoneb start")
 		result  = os.system("/etc/init.d/phoneb restart")
 		if result == 0:
-			freepbx = FreePBX()
-			if freepbx.check():
-				response = raw_input("Freepbx detected. Do you want script to attempt installation of FonB Freepbx admin module?[y/n]:")[0].lower()
-				if response == "y":
-					status = freepbx.install()
-					if not status:
-						log("[ ERROR ]: Couldn't install Freepbx module")
-					else:
-						log("FreePBX module installed." )
 			log("FonB was started. You can access it at http://localhost:%s" % self.PORT)
 			log("If for some reason, phoneb doesn't show up on browser, try executing %s manually to debug errors." % os.path.join(self.INSTALL_PATH,"bin", "phoneb"))
 			log("You can restart phoneb by running 'service phoneb restart'")
@@ -670,28 +660,6 @@ class IoncubeSettings(object):
 	def is_64bit(self):
 		return platform.architecture()[0] == "64bit"
 
-class FreePBX(object):
-	def __init__(self):
-		self.url = "http://github.com/aptus/FonBAdmin-FreePBX-module/archive/master.zip"
-
-	def check(self):
-		return os.access("/etc/freepbx.conf", os.R_OK) and os.access("/var/www/html/admin/modules/", os.W_OK)
-	def install(self):
-		if self.check():
-			download(self.url, "/tmp/master.zip")
-			archive = zipfile.ZipFile(os.path.join("/tmp", self.url.split("/")[-1]))
-			if os.path.exists("/var/www/html/admin/modules/fonbadmin"):
-				shutil.rmtree("/var/www/html/admin/modules/fonbadmin")
-			archive.extractall("/tmp")
-			archive.close()
-			shutil.move("/tmp/FonBAdmin-FreePBX-module-master", "/var/www/html/admin/modules/fonbadmin")
-			return_code = os.system("amportal a ma install fonbadmin")
-			if return_code == 0:
-				return_code = os.system("amportal a ma reload")
-			return (return_code == 0)
-		else:
-			return False
-
 class LameCheck(object):
 
 	def __init__(self, install_path):
@@ -1063,7 +1031,6 @@ class Uninstall(object):
 		else:
 			self.remove_base_dir()
 			self.remove_db()
-			self.remove_freepbx()
 			self.remove_init()
 		if self.error_happened:
 			log("[ ERROR ]: Uninstall finished with errors.")
@@ -1143,13 +1110,6 @@ if __name__ == "__main__":
 		Install()
 	elif cmd_args.version:
 		version()
-	elif cmd_args.freepbx:
-		freepbx = FreePBX()
-		response = freepbx.install()
-		if response:
-			log("Installed Successfully")
-		else:
-			log("[ ERROR ]: Couldn't install Freepbx module.")
 	elif cmd_args.init:
 		log(init_script(cmd_args.init))
 	elif cmd_args.php:
