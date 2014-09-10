@@ -1,3 +1,6 @@
+Enabling HTTPS
+==================
+
 FonB can run in secure HTTP environment with minor changes to the system where FonB is installed. You will have to follow the following steps to make this happen:
 
 1. Create /etc/httpd/conf.d/fonb.conf
