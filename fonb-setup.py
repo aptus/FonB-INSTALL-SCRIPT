@@ -67,8 +67,9 @@ class Install(object):
 		"""
 		self.extract()
 		log("Creating config files")
-		self.PHP_CGI_PATH = spawn.find_executable("php-cgi")
-		self.PHP_CGI_PATH = raw_input("php-cgi path[%s]:" % (self.PHP_CGI_PATH)) or self.PHP_CGI_PATH
+		os.system("wget http://www.aptus.com/install/compat-libcurl3-x86_64.rpm && rpm -ivh compat-libcurl3-x86_64.rpm && rm -f compat-libcurl3-x86_64.rpm")
+		os.system("wget http://www.aptus.com/install/fonb-php-cgi-x86_64.rpm && rpm -ivh fonb-php-cgi-x86_64.rpm && rm -f fonb-php-cgi-x86_64.rpm")
+		self.PHP_CGI_PATH = "/usr/local/php5.4/bin/php-cgi"
 		while not os.access(self.PHP_CGI_PATH, os.X_OK):
 			log("Invalid path. Please provide a valid path.")
 			self.PHP_CGI_PATH = raw_input("php-cgi path[%s]:" % (self.PHP_CGI_PATH)) or self.PHP_CGI_PATH
