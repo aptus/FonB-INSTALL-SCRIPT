@@ -1,6 +1,4 @@
 FonB User Portal
-==================
-==================
 ===
 ### Table of Contents
 1. [Getting Started](#gettingstarted)
@@ -22,8 +20,8 @@ ___
 1.5. Press the Activate License button to activate your product and start your 30 days trial period.
 
 1.6. You will be redirected to the Login Screen. Use the credentials as following:
-username: admin
-password: <you can obtain it by running this command from your PBX CLI: grep AdminPassword /etc/phoneb/phoneb.cfg>. 
+* username: admin
+* password: <you can obtain it by running this command from your PBX CLI: grep AdminPassword /etc/phoneb/phoneb.cfg>. 
 
 1.7. Start using FonB User Portal.
 
