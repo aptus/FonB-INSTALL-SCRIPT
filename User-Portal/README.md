@@ -4,9 +4,8 @@ FonB User Portal
 1. [Getting Started](#gettingstarted)
 
 2. [CRM Integration](#crmintegration)
-   2.1. [Salesforce CRM](#salesforcecrm)
-   
 
+   2.1. [Salesforce CRM](#salesforcecrm)
 ___
 <a name="gettingstarted"/>
 ### 1. Getting Started
