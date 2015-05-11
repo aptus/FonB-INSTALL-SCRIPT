@@ -5,15 +5,7 @@ FonB User Portal
 ### Table of Contents
 1. [Getting Started](#gettingstarted)
 
-  1.1. [FonB Solution Architecture](#solution-architecture)
-
-2. [System Requirements](#systemrequirements)
-
-  2.1. [OS Requirements](#osrequirements)
-
-  2.2. [Asterisk Version Support](#asteriskversion)
-
-  2.3. [Browser Requirement](#browserrequirement)
+2. [CRM Integration](#crmintegration)
    
 
 ___
