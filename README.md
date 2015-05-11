@@ -11,7 +11,7 @@ Given below is the list of resources for FonB Backend Installation:
 
 Once you install FonB Backend, you will have to use the Frontend. Given below is the list of steps need to go through and complete FonB Installation:
 
-* [FonB User Portal](https://github.com/aptus/FonB-INSTALL-SCRIPT/blob/master/User-Portal/README.md)
+* [FonB User Portal and CRM Integration](https://github.com/aptus/FonB-INSTALL-SCRIPT/blob/master/User-Portal/README.md)
 * [FonB Mobility for Android](https://github.com/aptus/FonB-INSTALL-SCRIPT/blob/master/FonB-Mobility-For-Android/README.md)
 * [FonB Mobility for iPhone](https://github.com/aptus/FonB-INSTALL-SCRIPT/blob/master/FonB-Mobility-For-iPhone/README.md)
 * [FonB XML Apps for IP Phones](https://github.com/aptus/FonB-Documentation/tree/master/XML-APP)
