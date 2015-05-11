@@ -4,6 +4,7 @@ FonB User Portal
 1. [Getting Started](#gettingstarted)
 
 2. [CRM Integration](#crmintegration)
+   2.1 [Salesforce CRM](#salesforcecrm)
    
 
 ___
@@ -31,7 +32,8 @@ grep AdminPassword /etc/phoneb/phoneb.cfg
 <a name="crmintegration">
 ### 2. CRM Integration
 The current Release of FonB support three CRM Platforms:
-### 2.1. Salesforce CRM
+<a name="salesforcecrm">
+   ### 2.1. Salesforce CRM
 To integrate FonB with Salesforce CRM, first you need to perform some configuration on Salesforce to allow FonB to connect to it.
 First Create new application, give it any common name like FonB_Integration, set these permissions on your app you created:
 * Access and manage your data (api)
