@@ -38,7 +38,7 @@ First Create new application, give it any common name like FonB_Integration, set
 * Full access (full)
 * Perform requests on your behalf at any time (refresh_token, offline_access)
 
-After that you need to set the redirect URL, please use the following: https://<yourserverIP>:7717/salesforce/oauth_callback.php
+After that you need to set the redirect URL, please use the following: https://FonBserverIP:7717/salesforce/oauth_callback.php
 Please note that FonB on HTTPS (PORT 7717) runs only to support salesforce.
 After you perform all the above steps, please login to FonB using one of your extensions, navigate to Settings>Contacts page and enter the required information on salesforce Section then press Verify and Sync. a pop-up window will appear asking you to login to your salesforce account, please do so and the window will automatically close after the verification complete.
 For further operational details, please use FonB Technical Guide.
